@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LinksModule } from './links/links.module';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -15,7 +16,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       url: process.env.DATABASE_URL,
       autoLoadEntities: true,
       synchronize: true
-    })
+    }),
+    LinksModule
   ],
   controllers: [AppController],
   providers: [AppService],
