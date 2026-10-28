@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('links')
 export class Link {
@@ -14,6 +14,6 @@ export class Link {
     @Column({default: 0})
     cliques: number;
 
-    @Column({name: 'criado_em'})
+    @CreateDateColumn({name: 'criado_em'})
     criadoEm: Date;
 }
